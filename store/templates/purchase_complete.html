@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Thank you for your order{% endblock title %}
+{% block content %}
+<div class="text-center">
+    <br>
+    <br>
+<h1 class="text-center product_title">Thank you for placing your order</h1>
+    <br>
+    <br>
+<p>Your order number is: <b>{{ order.id }}</b></p>
+    <p>Product Name: <b>{{ order.product.name }}</b></p>
+    <p>Product Price: <b>${{ order.product.cost }}</b></p>
+    <p>Customer Name: <b>{{ order.customerName }}</b></p>
+    <p>Email: <b>{{ order.emailAddress }}</b></p>
+    <p>Address: <b>{{ order.address}}</b></p>
+    <p>Phone number: <b>{{ order.phoneNumber }}</b></p>
+
+    <br><p>
+    <a class="btn bg-success text-white" href="{% url 'home' %}">Home</a>
+
+</p>
+</div>
+{% endblock content %}
